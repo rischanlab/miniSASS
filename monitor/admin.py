@@ -4,7 +4,6 @@ from monitor.models import Sites
 from monitor.models import Observations
 from monitor.models import ArchivedSites
 from monitor.models import ArchivedObservations
-from monitor.models import ScrollBanner
 
 
 def make_verified(modeladmin, request, queryset):
@@ -53,13 +52,13 @@ class ArchivedObservationsAdmin(admin.ModelAdmin):
 
 
 class SitesAdmin(admin.ModelAdmin):
+    list_max_show_all = 1000
     list_display = (
         'site_name',
         'user',
         'river_name',
     )
 
-admin.site.register(ScrollBanner)
 admin.site.register(Sites, SitesAdmin)
 admin.site.register(Observations, ObservationsAdmin)
 admin.site.register(ArchivedSites)

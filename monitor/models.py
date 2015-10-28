@@ -17,19 +17,6 @@ from datetime import datetime
 # Create your models here.
 
 
-class ScrollBanner(models.Model):
-    """ Scroll Banner Text
-    """
-    text = models.CharField(
-            max_length=255,
-            blank=False)
-    active = models.BooleanField(
-            default=True)
-
-    def __unicode__(self):
-        return self.text
-
-
 class Organisations(models.Model):
     ORG_CATS = (
         (u'school', u'School'),
